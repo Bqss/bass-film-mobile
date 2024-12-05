@@ -4,7 +4,7 @@ import Constants from "expo-constants";
 const BASE_URL = Constants.expoConfig?.extra?.apiUrl;
 
 export const searchMovies = async (query: string): Promise<Movie[]> => {
-  const response = await axios.get(`${BASE_URL}s=${encodeURIComponent(query)}`);
+  const response = await axios.get(`http://www.omdbapi.com/?apikey=63118199&s=${encodeURIComponent(query)}`);
   return response.data?.Search;
 };
 
